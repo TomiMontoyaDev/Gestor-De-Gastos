@@ -1,0 +1,81 @@
+.login-container {
+  background-color: #b0bcc4;
+  display: block;
+  padding: 40px;
+  margin: 0 auto;
+  max-width: 400px;
+  border-radius: 10px;
+  color: black;
+}
+
+.coin {
+  width: 100px;
+  color: #747bff;
+  rotate: 0deg;
+  animation: rotate 2s linear infinite, fadeIn 1s ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.login-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  animation: fadeIn 1s ease-in-out 0.2s forwards;
+  transform: perspective(1000px) rotateX(4deg) rotateY(-16deg) rotateZ(4deg);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  } /* Retraso de 0.5 segundos antes de iniciar la animación */
+}
+
+.login-form {
+  padding: 5px; /* Espaciado interno */
+  border-radius: 10px;
+  margin: 10px; /* Asegúrate de que no tenga márgenes externos */
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.login-button {
+  margin-top: 20px;
+  width: 90%;
+}
+
+.login-button:hover {
+  background-color: #747bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form input {
+  padding: 5px; /* Espaciado interno */
+  margin-bottom: 5px; /* Espaciado entre campos */
+  border: 1px solid #ccc; /* Borde sutil */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de fuente legible */
+  font-family: "Arial", sans-serif; /* Fuente legible */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+  width: 85%;
+}

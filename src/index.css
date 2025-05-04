@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  background-color: #747bff;
   margin: 0;
   display: flex;
   place-items: center;
@@ -66,3 +67,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
