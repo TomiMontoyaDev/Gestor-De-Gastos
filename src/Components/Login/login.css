@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Cal+Sans&display=swap');
 .login-container {
-  background-color: #b0bcc4;
+  background-color: rgba(255, 255, 255, 0.2 );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: block;
   padding: 40px;
   margin: 0 auto;
   max-width: 400px;
   border-radius: 10px;
   color: black;
+  font-weight: bold;
 }
 
 .coin {
   width: 100px;
-  color: #747bff;
   rotate: 0deg;
   animation: rotate 2s linear infinite, fadeIn 1s ease-in-out;
 }
@@ -25,12 +28,13 @@
 }
 
 .login-title {
+  background-color: #7FBC5C;
+  color: white;
   font-size: 2em;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 0;
   animation: fadeIn 1s ease-in-out 0.2s forwards;
-  transform: perspective(1000px) rotateX(4deg) rotateY(-16deg) rotateZ(4deg);
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1), 0 6px 20px rgba(0, 0, 0, 0.19);
@@ -54,17 +58,37 @@
 .login-form label {
   display: block;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .login-button {
+  background-color: #7FBC5C;
   margin-top: 20px;
   width: 90%;
+  color:white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
 .login-button:hover {
-  background-color: #747bff;
+  background-color: green;
   cursor: pointer;
+  transform: scale(1.05); /* Escala al pasar el mouse */
+  transition: background-color 0.3s ease;
+}
+
+.register-button {
+  background-color: #7FBC5C;
+  margin-top: 20px;
+  width: 90%;
+  color: white;
+  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+
+.register-button:hover {
+  background-color: green;
+  cursor: pointer;
+  transform: scale(1.05);
   transition: background-color 0.3s ease;
 }
 
@@ -73,9 +97,10 @@
   margin-bottom: 5px; /* Espaciado entre campos */
   border: 1px solid #ccc; /* Borde sutil */
   border-radius: 5px; /* Bordes redondeados */
-  font-size: 16px; /* Tamaño de fuente legible */
-  font-family: "Arial", sans-serif; /* Fuente legible */
+  font-size: 12px; /* Tamaño de fuente legible */
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra interna */
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
   width: 85%;
+  font-family: "Cal Sans", sans-serif; /* Cambia la fuente a Cal Sans */
+  font-weight: normal;
 }

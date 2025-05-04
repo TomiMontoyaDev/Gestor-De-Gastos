@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&family=Cal+Sans&display=swap");
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,12 +24,16 @@ a:hover {
 }
 
 body {
-  background-color: #747bff;
+  background-image: url("./assets/lofiroom.jpg");
+  background-size: cover;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: "Cal Sans", sans-serif;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
 }
 
 h1 {
@@ -63,8 +68,5 @@ button:focus-visible {
   a:hover {
     color: #747bff;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+  
 }
-
