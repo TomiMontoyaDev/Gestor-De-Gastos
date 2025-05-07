@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Cal+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Boldonse&family=Cal+Sans&display=swap");
 .login-container {
-  background-color: rgba(255, 255, 255, 0.2 );
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: block;
@@ -28,7 +28,7 @@
 }
 
 .login-title {
-  background-color: #7FBC5C;
+  background-color: #7fbc5c;
   color: white;
   font-size: 2em;
   font-weight: bold;
@@ -62,10 +62,10 @@
 }
 
 .login-button {
-  background-color: #7FBC5C;
+  background-color: #7fbc5c;
   margin-top: 20px;
   width: 90%;
-  color:white;
+  color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
@@ -77,11 +77,11 @@
 }
 
 .register-button {
-  background-color: #7FBC5C;
+  background-color: #7fbc5c;
   margin-top: 20px;
   width: 90%;
   color: white;
-  
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7), 0 6px 20px rgba(0, 0, 0, 0.19);
 }
 
