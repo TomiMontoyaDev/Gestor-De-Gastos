@@ -1,61 +1,61 @@
 import { useState } from "react";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
-import { initializeApp } from "firebase/app";
 import "./login.css";
 import coin from "../../assets/coin.svg";
 import { useNavigate } from "react-router-dom";
 
-// Import useNavigate from react-router-dom
-
-
-
-
-
-// Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyDv43fwfkDOqn0BWfHHPtQXBtpYH8s5_bo",
-  authDomain: "gestor-de-gastos-6eaa3.firebaseapp.com",
-  projectId: "gestor-de-gastos-6eaa3",
-  storageBucket: "gestor-de-gastos-6eaa3.firebasestorage.app",
-  messagingSenderId: "256004501104",
-  appId: "1:256004501104:web:12689ce503e3c8ba3aceb5",
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-function Login() {
-  const navigate = useNavigate();
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleRegister = async () => {
+  const registrarUsuario = async () => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
+      const response = await fetch(
+        "http://localhost:3000/Backend/usuarios/crear.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, contrasena: password }),
+        }
       );
-      alert("✅ Usuario registrado: " + userCredential.user.email);
-    } catch (error) {
-      alert("❌ Error al registrar: " + error.message);
+
+      const data = await response.json();
+      if (data.status === "ok") {
+        alert(data.message);
+      } else {
+        alert(`Error: ${data.message}`);
+      }
+    } finally {
+      setEmail("");
+      setPassword("");
     }
   };
 
-  const handleLogin = async () => {
+  const iniciarSesion = async () => {
     try {
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
+      const response = await fetch(
+        "http://localhost:3000/Backend/usuarios/crear.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, contrasena: password }),
+        }
       );
-      navigate('/app');
-    } catch (error) {
-      alert("❌ Error al iniciar sesión: " + error.message);
+
+      const data = await response.json();
+      if (data.status === "ok") {
+        alert(data.message);
+        navigate("/app");
+      } else {
+        alert(`Error: ${data.message}`);
+      }
+    } finally {
+      setEmail("");
+      setPassword("");
     }
   };
 
@@ -86,15 +86,14 @@ function Login() {
         />
         <br />
 
-        <button className="login-button" type="button" onClick={handleLogin}>
+        <button className="login-button" type="button" onClick={iniciarSesion}>
           Login
         </button>
-
         <br />
         <button
           className="register-button"
           type="button"
-          onClick={handleRegister}
+          onClick={registrarUsuario}
         >
           Register
         </button>
@@ -102,6 +101,6 @@ function Login() {
       </form>
     </div>
   );
-}
+};
 
 export default Login;

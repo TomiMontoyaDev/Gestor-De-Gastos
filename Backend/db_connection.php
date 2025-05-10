@@ -9,4 +9,5 @@ if (!$db_connection) {
     echo json_encode(["status" => "error", "message" => "Error al conectar"]);
 } else {
     echo json_encode(["status" => "ok", "message" => "Conexión exitosa"]);
+    
 }

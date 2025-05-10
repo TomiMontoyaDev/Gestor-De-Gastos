@@ -35,10 +35,11 @@ $stmt->bind_param("ss", $email, $contrasena);
 
 if ($stmt->execute()) {
     echo json_encode(["status" => "ok", "message" => "Usuario creado con éxito mi papachooooooo"]);
+    exit;
 } else {
     echo json_encode(["status" => "error", "message" => "No se pudo crear el usuario", "error" => $stmt->error]);
+    exit;
 }
 
 $stmt->close();
 $db_connection->close();
-
