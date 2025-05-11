@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./login.css";
 import coin from "../../assets/coin.svg";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -21,6 +22,27 @@ const Login = () => {
         }
       );
 
+      if (!email || !password) {
+        Swal.fire({
+          icon: "warning",
+          title: "Campos vacíos",
+          text: "Todos los campos son obligatorios",
+          confirmButtonText: "Entendido",
+          background: "#fefefe",
+          confirmButtonColor: "#3085d6",
+        });
+        return;
+      }
+
+      if (!email.includes("@")) {
+        Swal.fire({
+          icon: "error",
+          title: "Correo inválido",
+          text: 'El correo debe contener un "@"',
+          confirmButtonText: "Corregir",
+        });
+        return;
+      }
       const data = await response.json();
       if (data.status === "ok") {
         alert(data.message);
