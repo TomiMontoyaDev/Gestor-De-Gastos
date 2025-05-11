@@ -29,7 +29,7 @@ const Login = () => {
           text: "Todos los campos son obligatorios",
           confirmButtonText: "Entendido",
           background: "#fefefe",
-          confirmButtonColor: "#3085d6",
+          confirmButtonColor: "#7fbc5c",
         });
         return;
       }
@@ -40,6 +40,7 @@ const Login = () => {
           title: "Correo inválido",
           text: 'El correo debe contener un "@"',
           confirmButtonText: "Corregir",
+          confirmButtonColor: "#7fbc5c",
         });
         return;
       }
@@ -58,9 +59,9 @@ const Login = () => {
   const iniciarSesion = async () => {
     try {
       const response = await fetch(
-        "http://localhost:3000/Backend/usuarios/crear.php",
+        "http://localhost:3000/Backend/usuarios/login.php",
         {
-          method: "POST",
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
@@ -70,7 +71,13 @@ const Login = () => {
 
       const data = await response.json();
       if (data.status === "ok") {
-        alert(data.message);
+        Swal.fire({
+          icon: "success",
+          title: "Inicio Exitoso",
+          text: "Gestiona tus gastos con facilidad",
+          confirmButtonText: "Entendido",
+          confirmButtonColor: "#7fbc5c",
+        });
         navigate("/app");
       } else {
         alert(`Error: ${data.message}`);
